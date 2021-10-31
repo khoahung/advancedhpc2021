@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.31)  31 OCT 2021 11:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.31)  31 OCT 2021 11:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -53,15 +53,15 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 5.
 
-Overfull \hbox (5.56677pt too wide) in paragraph at lines 6--31
-[]\OT1/cmr/m/n/10 GPU IN-FO-MA-TION -display de-scrip-tion: 3D con-troller prod
--uct: GK110BGL
+Overfull \hbox (31.11205pt too wide) in paragraph at lines 6--31
+\OT1/cmr/m/n/10 resources: irq:114 memory:f9000000-f9ffffff memory:d0000000-dff
+fffff memory:ce000000-
  []
 
 
-Overfull \hbox (14.83298pt too wide) in paragraph at lines 6--31
-\OT1/cmr/m/n/10 [Tesla K40c] ven-dor: NVIDIA Cor-po-ra-tion phys-i-cal id: 0 bu
-s info: pci@0000:21:00.0
+Overfull \hbox (29.1676pt too wide) in paragraph at lines 6--31
+\OT1/cmr/m/n/10 resources: irq:115 memory:fb000000-fbffffff memory:f0000000-f7f
+fffff memory:ee000000-
  []
 
 [1
@@ -71,16 +71,16 @@ s info: pci@0000:21:00.0
 Here is how much of TeX's memory you used:
  400 strings out of 478994
  6982 string characters out of 5858183
- 292824 words of memory out of 5000000
+ 293824 words of memory out of 5000000
  17959 multiletter control sequences out of 15000+600000
  406465 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,6n,50p,152b,189s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,6n,50p,155b,189s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 r17.pfb>
-Output written on test.pdf (1 page, 43713 bytes).
+Output written on test.pdf (1 page, 43607 bytes).
 PDF statistics:
  20 PDF objects out of 1000 (max. 8388607)
  13 compressed objects within 1 object stream
