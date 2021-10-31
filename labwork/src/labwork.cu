@@ -153,17 +153,17 @@ void Labwork::labwork2_GPU() {
 }
 
 void Labwork::labwork3_GPU() {
-    // Calculate number of pixels
+    int nDevices = 0;
+    // get all devices
+    cudaGetDeviceCount(&nDevices);
+    printf("Number total of GPU : %d\n\n", nDevices);
+    for (int i = 0; i < nDevices; i++){
+        // get informations from individual device
+        cudaDeviceProp prop;
+        cudaGetDeviceProperties(&prop, i);
+        // something more here
+    }
 
-    // Allocate CUDA memory    
-
-    // Copy CUDA Memory from CPU to GPU
-
-    // Processing
-
-    // Copy CUDA Memory from GPU to CPU
-
-    // Cleaning
 }
 
 void Labwork::labwork4_GPU() {
