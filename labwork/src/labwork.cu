@@ -153,6 +153,18 @@ void Labwork::labwork2_GPU() {
 }
 
 void Labwork::labwork3_GPU() {
+    // Calculate number of pixels
+
+    // Allocate CUDA memory    
+
+    // Copy CUDA Memory from CPU to GPU
+
+    // Processing
+
+    // Copy CUDA Memory from GPU to CPU
+
+    // Cleaning
+    
     int nDevices = 0;
     // get all devices
     cudaGetDeviceCount(&nDevices);
