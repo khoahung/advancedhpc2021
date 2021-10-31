@@ -166,7 +166,8 @@ void Labwork::labwork3_GPU() {
 
     // Cleaning
     int pixelCount = imageWidth * imageHeight;
-    cudaMalloc(&devInput, pixelCount * sizeof(uchar3)); cudaMalloc(&devGray, pixelCount * sizeof(float));
+    cudaMalloc(&devInput, pixelCount * sizeof(uchar3));
+    cudaMalloc(&devGray, pixelCount * sizeof(float));
     cudaMemcpy(devInput, hostInput, pixelCount * sizeof(uchar3),cudaMemcpyHostToDevice);
     rgb2grayCUDA<<<dimGrid, dimBlock>>>(devInput, devGray, regionSize);
     cudaMemcpy(hostGray, devGray,pixelCount * sizeof(float),cudaMemcpyDeviceToHost);
