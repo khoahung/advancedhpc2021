@@ -12,10 +12,10 @@ Students are expected to:
 Student Info
 =======================
 
-* Name: MyName
+* Name: Nguyễn Tất Hùng
 * Key:
 
 ```
-ssh-rsa ThisIsSampleKey
+ssh-rsa nUNZAVHZIu+ich5zpC6Tl9HhVVIyKfjfyHUwXa5E3ls
 ```
 
