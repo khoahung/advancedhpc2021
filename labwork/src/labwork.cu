@@ -152,7 +152,7 @@ void Labwork::labwork2_GPU() {
     }
 
 }
-__global__ void grayscale(uchar3 *input, uchar3 *output) {
+__global__ void rgb2grayCUDA(uchar3 *input, uchar3 *output) {
        int tid = threadIdx.x + blockIdx.x * blockDim.x;
        output[tid].x = (input[tid].x + input[tid].y +
                        input[tid].z) / 3;
