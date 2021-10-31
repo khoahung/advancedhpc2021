@@ -147,6 +147,7 @@ void Labwork::labwork2_GPU() {
         // get informations from individual device
         cudaDeviceProp prop;
         cudaGetDeviceProperties(&prop, i);
+        printf("Device name: %s, device core clock %d, id: %d\n",prop.name,prop.clockRate,i);
         // something more here
     }
 
@@ -164,17 +165,6 @@ void Labwork::labwork3_GPU() {
     // Copy CUDA Memory from GPU to CPU
 
     // Cleaning
-    
-    int nDevices = 0;
-    // get all devices
-    cudaGetDeviceCount(&nDevices);
-    printf("Number total of GPU : %d\n\n", nDevices);
-    for (int i = 0; i < nDevices; i++){
-        // get informations from individual device
-        cudaDeviceProp prop;
-        cudaGetDeviceProperties(&prop, i);
-        // something more here
-    }
 
 }
 
