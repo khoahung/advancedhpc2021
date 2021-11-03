@@ -152,38 +152,65 @@ void Labwork::labwork2_GPU() {
     }
 
 }
-__global__ void rgb2grayCUDA(uchar3 *input, uchar3 *output) {
-       int tid = threadIdx.x + blockIdx.x * blockDim.x;
-       output[tid].x = (input[tid].x + input[tid].y +
-                       input[tid].z) / 3;
-       output[tid].z = output[tid].y = output[tid].x;
+
+__global__ void grayscale(uchar3 *input, uchar3 *output) {
+        int tid = threadIdx.x + blockIdx.x * blockDim.x; 
+	output[tid].x = (input[tid].x + input[tid].y + input[tid].z) / 3;
+        output[tid].z = output[tid].y = output[tid].x;
 }
 void Labwork::labwork3_GPU() {
     // Calculate number of pixels
+    int pixelCount = inputImage->width * inputImage->height;	
+    //char *hostInput = inputImage->buffer; // Perfect version
+    char *hostInput = (char*) malloc(inputImage->width * inputImage->height * 3); // Test version
+    char *hostOutput = new char[inputImage->width * inputImage->height * 3]; // Test version
+    outputImage = static_cast<char *>(malloc(pixelCount * 3));
+    for (int j = 0; j < 100; j++) {     // let's do it 100 times, otherwise it$
+        # pragma omp parallel for
+        for (int i = 0; i < pixelCount; i++) {
+            outputImage[i * 3] = (char) (((int) inputImage->buffer[i * 3] + (int) inputImage->buffer[i * 3 + 1] + (int) inputImage->buffer[i * 3 + 2]) / 3);
+            outputImage[i * 3 + 1] = outputImage[i * 3];
+            outputImage[i * 3 + 2] = outputImage[i * 3];
+        }
+    }
 
     // Allocate CUDA memory    
-
+    uchar3 *devInput;
+    uchar3 *devOutput;
+    //cudaMalloc(&devInput, pixelCount*3); // Perfect version
+    cudaMalloc(&devInput, pixelCount * sizeof(uchar3)); // Test version
+    //cudaMalloc(&devOutput, pixelCount*3); // Perfect version
+    cudaMalloc(&devOutput, pixelCount * sizeof(float)); // Test version
+    
     // Copy CUDA Memory from CPU to GPU
+    //cudaMemcpy(devInput, hostInput, pixelCount*3, cudaMemcpyHostToDevice); // Perfect version
+    cudaMemcpy(devInput, hostInput, pixelCount * sizeof(uchar3), cudaMemcpyHostToDevice); // Test version
+
 
     // Processing
+    int blockSize = 64;
+    int nBlock = pixelCount/blockSize;
+    grayscale<<<nBlock, blockSize>>>(devInput, devOutput);
 
     // Copy CUDA Memory from GPU to CPU
+    //cudaMemcpy(outputImage, devOutput, pixelCount*3, cudaMemcpyDeviceToHost); // Perfect version 
+    cudaMemcpy(hostOutput, devOutput, pixelCount*sizeof(float), cudaMemcpyDeviceToHost); // Test version
 
     // Cleaning
-    int pixelCount = imageWidth * imageHeight;
-    cudaMalloc(&devInput, pixelCount * sizeof(uchar3));
-    cudaMalloc(&devGray, pixelCount * sizeof(float));
-    cudaMemcpy(devInput, hostInput, pixelCount * sizeof(uchar3),cudaMemcpyHostToDevice);
-    rgb2grayCUDA<<<dimGrid, dimBlock>>>(devInput, devGray, regionSize);
-    cudaMemcpy(hostGray, devGray,pixelCount * sizeof(float),cudaMemcpyDeviceToHost);
+    //free(hostInput);
     cudaFree(devInput);
-
+    cudaFree(devOutput);
 }
+
 
 void Labwork::labwork4_GPU() {
 }
 
-void Labwork::labwork5_GPU(bool shared) {
+
+void Labwork::labwork5_CPU() {
+}
+
+void Labwork::labwork5_GPU() {
 }
 
 void Labwork::labwork6_GPU() {
