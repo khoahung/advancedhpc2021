@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2020.2.19)  3 NOV 2021 09:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2020.2.19)  3 NOV 2021 10:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -238,9 +238,39 @@ File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 24.
 
-Overfull \hbox (56.30862pt too wide) in paragraph at lines 31--32
+Overfull \hbox (98.30905pt too wide) in paragraph at lines 26--27
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (68.30875pt too wide) in paragraph at lines 27--28
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (452.31265pt too wide) in paragraph at lines 32--33
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-] 
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (86.30893pt too wide) in paragraph at lines 47--48
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (146.30954pt too wide) in paragraph at lines 48--51
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (104.30911pt too wide) in paragraph at lines 57--58
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (140.30948pt too wide) in paragraph at lines 58--60
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [1
@@ -249,20 +279,20 @@ Overfull \hbox (56.30862pt too wide) in paragraph at lines 31--32
 <../labwork/data/hl3.jpg, id=12, 602.25pt x 602.25pt>
 File: ../labwork/data/hl3.jpg Graphic file (type jpg)
 <use ../labwork/data/hl3.jpg>
-Package pdftex.def Info: ../labwork/data/hl3.jpg  used on input line 66.
+Package pdftex.def Info: ../labwork/data/hl3.jpg  used on input line 69.
 (pdftex.def)             Requested size: 180.67639pt x 180.67639pt.
 <../labwork/build/labwork4-gpu-out.jpg, id=13, 602.25pt x 602.25pt>
 File: ../labwork/build/labwork4-gpu-out.jpg Graphic file (type jpg)
 <use ../labwork/build/labwork4-gpu-out.jpg>
 Package pdftex.def Info: ../labwork/build/labwork4-gpu-out.jpg  used on input l
-ine 70.
+ine 73.
 (pdftex.def)             Requested size: 180.67639pt x 180.67639pt.
  [2 <../labwork/data/hl3.jpg> <../labwork/build/labwork4-gpu-out.jpg>] (./labwo
 rk4.aux) ) 
 Here is how much of TeX's memory you used:
  3585 strings out of 494561
  49945 string characters out of 6177454
- 142772 words of memory out of 5000000
+ 150772 words of memory out of 5000000
  7221 multiletter control sequences out of 15000+600000
  7280 words of font info for 26 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -273,7 +303,7 @@ usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on labwork4.pdf (2 pages, 102882 bytes).
+Output written on labwork4.pdf (2 pages, 103625 bytes).
 PDF statistics:
  37 PDF objects out of 1000 (max. 8388607)
  24 compressed objects within 1 object stream
