@@ -202,6 +202,18 @@ void Labwork::labwork3_GPU() {
     cudaFree(devOutput);
 }
 
+
+_global__ void grayscale2D(uchar3 *input, uchar3 *output, int width, int height) {
+        int x = threadIdx.x + blockIdx.x + blockDim.x;
+        int y = threadIdx.y + blockIdx.y + blockDim.y;
+        if (x > width || y > height){
+            printf("x, y are outside the width, height");
+            return;
+        }
+        int tid = x + y * width;
+        output[tid].x = (input[tid].x + input[tid].y + input[tid].z) / 3;
+        output[tid].z = output[tid].y = output[tid].x;
+}
 void Labwork::labwork4_GPU() {
         // Calculate number of pixels
     int pixelCount = inputImage->width * inputImage->height;
