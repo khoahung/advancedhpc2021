@@ -258,8 +258,17 @@ void Labwork::labwork4_GPU() {
     cudaFree(devOutput);
 }
 
+float gaussianBlur[7][7] =
+        {{ 0, 0, 1, 2, 1, 0, 0 },
+        { 0, 3, 13, 22, 13, 3, 0 },
+        { 1, 13, 59, 97, 59, 13, 1 },
+        { 2, 22, 97, 159, 97, 22, 2 },
+        { 1, 13, 59, 97, 59, 13, 1 },
+        { 0, 3, 13, 22, 13, 3, 0 },
+        { 0, 0, 1, 2, 1, 0, 0 }};
+
 void Labwork::labwork5_CPU() {
-    int pixelCount = inputImage->width * inputImage->height;
+        int pixelCount = inputImage->width * inputImage->height;
         outputImage = static_cast(malloc(pixelCount * 3));
         for (int row = 3; row < inputImage->height-3; row++) {
                 for (int col = 3; col < inputImage->width-3; col++) {
@@ -268,20 +277,19 @@ void Labwork::labwork5_CPU() {
                         int sumB = 0;
                         for (int j = 0; j < 7; j++) {
                                 for (int i = 0; i < 7; i++) {
-                                        int posKernel = i + j * 7;
                                         int pos = (col - i - 3) + (row - j - 3) * inputImage->width;
-                                        sumR += inputImage->buffer[pos]*gaussianBlur[posKernel];
-                                        sumG += inputImage->buffer[pos+1]*gaussianBlur[posKernel];
-                                        sumB += inputImage->buffer[pos+2]*gaussianBlur[posKernel];
+                                        sumR += inputImage->buffer[pos]*gaussianBlur[j][i];
+                                        sumG += inputImage->buffer[pos+1]*gaussianBlur[j][i];
+                                        sumB += inputImage->buffer[pos+2]*gaussianBlur[j][i];
                                 }
                         }
                         sumR /= 1003;
                         sumG /= 1003;
                         sumB /= 1003;
-
-                        outputImage[i * 3] = sumR;
-                        outputImage[i * 3 + 1] = sumG;
-                        outputImage[i * 3 + 2] = sumB;
+                        int pos = col+ row * inputImage->width;
+                        outputImage[pos * 3] = sumR;
+                        outputImage[pos * 3 + 1] = sumG;
+                        outputImage[pos * 3 + 2] = sumB;
                 }
         }
 }
