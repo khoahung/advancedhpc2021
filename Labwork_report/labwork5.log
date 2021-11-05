@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2020.2.19)  5 NOV 2021 09:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2020.2.19)  5 NOV 2021 09:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -102,7 +102,7 @@ File: listings.cfg 2018/09/02 1.7 listings configuration
 ))
 Package: listings 2018/09/02 1.7 (Carsten Heinz)
 
-No file labwork5.aux.
+(./labwork5.aux)
 \openout1 = `labwork5.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
@@ -117,6 +117,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -295,8 +296,8 @@ ine 176.
  [4 <../labwork/data/hl3.jpg> <../labwork/build/labwork4-gpu-out.jpg>]
 (./labwork5.aux) ) 
 Here is how much of TeX's memory you used:
- 3583 strings out of 494561
- 49919 string characters out of 6177454
+ 3585 strings out of 494561
+ 49945 string characters out of 6177454
  169780 words of memory out of 5000000
  7221 multiletter control sequences out of 15000+600000
  7280 words of font info for 26 fonts, out of 8000000 for 9000
@@ -308,7 +309,7 @@ Here is how much of TeX's memory you used:
 /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on labwork5.pdf (4 pages, 97787 bytes).
+Output written on labwork5.pdf (4 pages, 97841 bytes).
 PDF statistics:
  43 PDF objects out of 1000 (max. 8388607)
  28 compressed objects within 1 object stream
